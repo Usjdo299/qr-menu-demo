@@ -16,9 +16,9 @@ body{padding-bottom:110px;overflow-x:hidden}
 .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,var(--bg))}
 .id{margin-top:-62px;position:relative;z-index:2;text-align:center;padding:0 16px}
-.logo{width:92px;height:92px;margin:0 auto 12px;border-radius:30px;display:grid;place-items:center;font-family:'Reem Kufi',var(--font);font-size:46px;color:var(--ai);background:linear-gradient(145deg,color-mix(in srgb,var(--acc) 70%,#fff),var(--acc));box-shadow:0 14px 34px color-mix(in srgb,var(--acc) 35%,transparent),inset 0 1px 0 rgba(255,255,255,.4);border:3px solid var(--bg);overflow:hidden}
+.logo{width:92px;height:92px;margin:0 auto 12px;border-radius:30px;display:grid;place-items:center;font-family:var(--hfont);font-size:46px;color:var(--ai);background:linear-gradient(145deg,color-mix(in srgb,var(--acc) 70%,#fff),var(--acc));box-shadow:0 14px 34px color-mix(in srgb,var(--acc) 35%,transparent),inset 0 1px 0 rgba(255,255,255,.4);border:3px solid var(--bg);overflow:hidden}
 .logo img{width:100%;height:100%;object-fit:cover}
-h1{font-family:'Reem Kufi',var(--font);font-size:31px;margin:0 0 4px;line-height:1.25}
+h1{font-family:var(--hfont);font-size:31px;margin:0 0 4px;line-height:1.25}
 .sub{color:var(--mut);font-size:14.5px}
 .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
 .chip{display:flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;font-size:13px;color:var(--mut);box-shadow:none}
@@ -28,7 +28,7 @@ nav.cats::-webkit-scrollbar{display:none}
 html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}html,body{scrollbar-width:none}
 nav.cats button{white-space:nowrap;padding:9px 17px;border-radius:999px;background:var(--glass);border:1px solid var(--line);cursor:pointer;font-size:14.5px;transition:.2s}
 nav.cats button.on{background:var(--acc);color:var(--ai);border-color:var(--acc);font-weight:700;box-shadow:0 6px 18px color-mix(in srgb,var(--acc) 35%,transparent)}
-h2.cat{font-family:'Reem Kufi',var(--font);font-size:23px;margin:24px 0 12px;display:flex;align-items:center;gap:12px}
+h2.cat{font-family:var(--hfont);font-size:23px;margin:24px 0 12px;display:flex;align-items:center;gap:12px}
 h2.cat::after{content:"";flex:1;height:1px;background:linear-gradient(to left,transparent,var(--line))}
 .item{display:flex;gap:14px;padding:12px;margin-bottom:12px;cursor:pointer;transition:transform .2s,border-color .2s;animation:up .45s both;position:relative}
 .item:active{transform:scale(.985)}
@@ -50,7 +50,7 @@ h2.cat::after{content:"";flex:1;height:1px;background:linear-gradient(to left,tr
 .search input{flex:1;background:none;border:0;outline:0;font-size:16px}
 .search input::placeholder{color:var(--mut)}
 .empty{text-align:center;color:var(--mut);padding:50px 0;line-height:2}
-.ph2{font-family:'Reem Kufi',var(--font);font-size:26px;margin:26px 0 8px}
+.ph2{font-family:var(--hfont);font-size:26px;margin:26px 0 8px}
 .card{padding:6px 18px;margin-bottom:14px}
 .ln{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);font-size:15px}
 .ln:last-child{border:0}.ln svg{color:var(--acc)}.ln span{color:var(--mut);font-size:13px;display:block}
@@ -67,21 +67,59 @@ footer{text-align:center;color:var(--mut);font-size:12.5px;margin:34px 0 10px;op
 .modal.show{display:flex}
 .sheet{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:var(--glass2);backdrop-filter:blur(30px) saturate(160%);-webkit-backdrop-filter:blur(30px) saturate(160%);border:1px solid var(--line);border-radius:30px 30px 0 0;padding:20px 20px 26px;animation:sheet .32s both}
 @keyframes sheet{from{transform:translateY(50px);opacity:0}to{transform:none;opacity:1}}
-.sheet h3{font-family:'Reem Kufi',var(--font);font-size:24px;margin:0 0 6px}
+.sheet h3{font-family:var(--hfont);font-size:24px;margin:0 0 6px}
 .grab{width:42px;height:5px;border-radius:9px;background:var(--line);margin:0 auto 14px}
 .big{width:100%;height:210px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,color-mix(in srgb,var(--acc) 24%,var(--bg2)),var(--bg2));margin-bottom:14px;overflow:hidden}
 .big img.ph{width:100%;height:100%;object-fit:cover}.big .em{width:96px;height:96px}
 .btn{border:1px solid var(--line);background:var(--glass);padding:13px 18px;border-radius:16px;cursor:pointer;width:100%;margin-top:6px}
 .skel{height:96px;margin-bottom:12px;border-radius:22px;background:linear-gradient(90deg,var(--glass),transparent,var(--glass));background-size:200% 100%;animation:sk 1.2s infinite}
 @keyframes sk{to{background-position:-200% 0}}
+.ring{position:relative;width:106px;height:106px;margin:0 auto 14px;border-radius:var(--lrr);display:grid;place-items:center;overflow:hidden;box-shadow:0 16px 40px color-mix(in srgb,var(--acc) 30%,transparent)}
+.ring::before{content:"";position:absolute;inset:-45%;background:conic-gradient(from 0deg,var(--acc),transparent 28%,color-mix(in srgb,var(--acc) 60%,#fff) 52%,transparent 78%,var(--acc));animation:spin 9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ring .logo{position:relative;margin:0;width:96px;height:96px;border:0;border-radius:var(--lr);box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}
+.orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:10px auto 4px;width:200px;color:var(--acc)}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:linear-gradient(to right,transparent,var(--acc))}
+.orn::after{transform:scaleX(-1)}
+.orn i{width:7px;height:7px;background:var(--acc);transform:rotate(45deg);display:block}
+.chip.tbl{background:var(--acc);color:var(--ai);font-weight:800;border-color:var(--acc);font-size:14px}.chip.tbl svg{color:var(--ai)}
+#list.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#list.grid h2.cat{grid-column:1/-1}
+#list.grid .item{flex-direction:column;margin:0;padding:10px}
+#list.grid .thumb{width:100%;height:130px}
+#list.grid .body b{padding-inline-end:30px;font-size:15.5px}
+.addb,.stp button{width:36px;height:36px;border-radius:50%;border:0;background:var(--acc);color:var(--ai);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 16px color-mix(in srgb,var(--acc) 40%,transparent);flex:none}
+.stp{display:flex;align-items:center;gap:6px;background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:3px}
+.stp button{width:30px;height:30px;box-shadow:none}.stp button.m{background:transparent;color:var(--ink)}
+.stp b{min-width:22px;text-align:center;font-size:15px;padding:0!important}
+.pill{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(max(14px,env(safe-area-inset-bottom)) + 74px);width:min(412px,calc(100% - 44px));z-index:29;display:none;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;border-radius:22px;border:0;background:var(--acc);color:var(--ai);font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 12px 30px color-mix(in srgb,var(--acc) 40%,transparent);animation:up .3s both}
+.pill.show{display:flex}
+.pill span.n{background:var(--ai);color:var(--acc);border-radius:99px;min-width:26px;height:26px;display:grid;place-items:center;font-size:13px;padding:0 6px}
+.ci{padding:14px;margin-bottom:12px}
+.ci .r1{display:flex;align-items:center;gap:12px}
+.ci .r1 .nm{flex:1;min-width:0}.ci .r1 .nm b{display:block;font-size:16px}.ci .r1 .nm span{color:var(--acc);font-weight:700;font-size:14px}
+.nt{width:100%;margin-top:10px;padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(127,127,127,.1);outline:0;font-size:14px}
+.nt:focus{border-color:var(--acc)}
+.tot{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;margin:14px 0;font-size:17px}.tot b{color:var(--acc);font-size:24px}
+.send{width:100%;padding:16px;border-radius:20px;border:0;background:var(--acc);color:var(--ai);font-weight:800;font-size:18px;cursor:pointer;box-shadow:0 12px 30px color-mix(in srgb,var(--acc) 40%,transparent);display:flex;align-items:center;justify-content:center;gap:10px}
+.send[disabled]{opacity:.6}
+.stat{padding:22px 18px;text-align:center;margin-bottom:16px}
+.stat .no{font-family:var(--hfont);font-size:44px;color:var(--acc);line-height:1.1}
+.steps{display:flex;align-items:center;justify-content:center;gap:0;margin:18px 0 10px}
+.steps .s{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12.5px;color:var(--mut);width:84px}
+.steps .s i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--glass);border:1px solid var(--line)}
+.steps .s.on{color:var(--ink)}.steps .s.on i{background:var(--acc);color:var(--ai);border-color:var(--acc);box-shadow:0 6px 18px color-mix(in srgb,var(--acc) 40%,transparent)}
+.steps .l{height:2px;width:34px;background:var(--line);margin-bottom:22px}.steps .l.on{background:var(--acc)}
+.tst{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:99;background:var(--acc);color:var(--ai);padding:10px 20px;border-radius:99px;font-weight:700;display:none;box-shadow:var(--shadow);max-width:90%;text-align:center}
+.nmsg{font-size:13px;color:var(--mut);text-align:center;line-height:1.8;margin:10px 0}
 </style>
 </head>
 <body>
 <div class="page show" id="p-menu">
  <div class="cover" id="cover"></div>
  <div class="id">
-  <div class="logo" id="logo"></div>
-  <h1 id="rname"></h1><div class="sub" id="rtag"></div>
+  <div class="ring"><div class="logo" id="logo"></div></div>
+  <h1 id="rname"></h1><div class="sub" id="rtag"></div><div class="orn"><i></i></div>
   <div class="chips" id="rinfo"></div>
  </div>
  <div class="wrap"><nav class="cats" id="cats"></nav><main id="list"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main></div>
@@ -89,15 +127,18 @@ footer{text-align:center;color:var(--mut);font-size:12.5px;margin:34px 0 10px;op
 <div class="page" id="p-search"><div class="wrap">
  <div class="glass search"><input id="q" placeholder="ابحث عن أكلة أو مشروب..." autocomplete="off"></div>
  <div id="sres"></div></div></div>
+<div class="page" id="p-cart"><div class="wrap"><div class="ph2">السلة</div><div id="cres"></div></div></div>
 <div class="page" id="p-fav"><div class="wrap"><div class="ph2">المفضلة</div><div id="fres"></div></div></div>
 <div class="page" id="p-info"><div class="wrap" id="info"></div></div>
 
 <div class="bar" id="bar">
  <button data-go="menu" class="on"><span>المنيو</span></button>
  <button data-go="search"><span>بحث</span></button>
+ <button data-go="cart" id="cartTab" style="display:none"><span>السلة</span><i class="dot" id="ccount" style="display:none"></i></button>
  <button data-go="fav"><span>المفضلة</span><i class="dot" id="fcount" style="display:none"></i></button>
  <button data-go="info"><span>معلومات</span></button>
 </div>
+<button class="pill" id="pill"></button><div class="tst" id="tst"></div>
 <div class="modal" id="mItem"><div class="sheet" id="sItem"></div></div>
 
 <script src="shared.js"></script>
@@ -105,22 +146,56 @@ footer{text-align:center;color:var(--mut);font-size:12.5px;margin:34px 0 10px;op
 <script>
 $('#base').textContent=BASE_CSS;
 const Q=new URLSearchParams(location.search),SLUG=(Q.get('r')||'dijla').toLowerCase(),PREVIEW=Q.has('preview');
-let D=null,cur='all',fav=[];
+const TN=parseInt(Q.get('t'))||0,TK=Q.get('k')||'',TABLE=TN>0&&(!!TK||PREVIEW);
+let D=null,cur='all',fav=[],CART=[],ORD=null,ONOTE='',SQ=1,curPage='menu',pollT=0;
+const CK='cart:'+SLUG+':'+TN,OKK='ord:'+SLUG+':'+TN;
+try{CART=JSON.parse(localStorage.getItem(CK)||'[]');ORD=JSON.parse(localStorage.getItem(OKK)||'null');if(ORD&&Date.now()-ORD.t>6*36e5)ORD=null}catch(e){}
+const saveCart=()=>{if(!PREVIEW)localStorage.setItem(CK,JSON.stringify(CART))};
+const saveOrd=()=>{if(!PREVIEW){if(ORD)localStorage.setItem(OKK,JSON.stringify(ORD));else localStorage.removeItem(OKK)}};
+const ordOn=()=>TABLE&&!(D&&D.shop&&D.shop.ordering===false);
+const qtyOf=id=>(CART.find(c=>c.id===id)||{}).q||0;
+const itemOf=id=>D&&D.items.find(x=>x.id===id);
+function toast(t){const e=$('#tst');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',2800)}
+function cartTotals(){let n=0,t=0;CART.forEach(c=>{const i=itemOf(c.id);if(i){n+=c.q;t+=c.q*i.price}});return{n,t}}
+function slot(i){
+ if(!ordOn()||!i.on)return i.on?(i.tag?`<span class="tag">${esc(i.tag)}</span>`:''):'<span class="tag">غير متوفر حالياً</span>';
+ const q=qtyOf(i.id);
+ return q?`<span class="stp"><button data-q="${esc(i.id)}" data-d="1">${ic('plus',16)}</button><b>${q}</b><button class="m" data-q="${esc(i.id)}" data-d="-1">${ic('minus',16)}</button></span>`:`<button class="addb" data-q="${esc(i.id)}" data-d="1" aria-label="أضف">${ic('plus',20)}</button>`;
+}
+function setQ(id,q){
+ let c=CART.find(x=>x.id===id);
+ if(!c){if(q<=0)return;c={id,q:0,note:''};CART.push(c)}
+ c.q=Math.max(0,Math.min(20,q));if(!c.q)CART=CART.filter(x=>x!==c);
+ saveCart();refreshCart(id);
+}
+function refreshCart(id){
+ const {n,t}=cartTotals();
+ $('#ccount').style.display=n?'grid':'none';$('#ccount').textContent=n;
+ $('#cartTab').style.display=ordOn()?'':'none';
+ const p=$('#pill');p.classList.toggle('show',ordOn()&&n>0&&curPage!=='cart');
+ p.innerHTML=`<span>${ic('cart',20)} عرض السلة</span><span><span class="n">${n}</span></span><span>${fmt(t)} د.ع</span>`;
+ if(id){$$('[data-slot="'+id+'"]').forEach(el=>{const i=itemOf(id);if(i){el.innerHTML=slot(i);T(el)}})}
+ if(curPage==='cart')paintCart();
+}
+
 try{fav=JSON.parse(localStorage.getItem('fav:'+SLUG)||'[]')}catch(e){}
-document.querySelectorAll('.bar button').forEach(b=>{const m={menu:'menu',search:'search',fav:'heart',info:'info'}[b.dataset.go];b.insertAdjacentHTML('afterbegin',ic(m,22))});
+document.querySelectorAll('.bar button').forEach(b=>{const m={menu:'menu',search:'search',fav:'heart',info:'info',cart:'cart'}[b.dataset.go];b.insertAdjacentHTML('afterbegin',ic(m,22))});
 $('.search').insertAdjacentHTML('afterbegin',ic('search',20));
 function go(p){
+ curPage=p;
  $$('.page').forEach(x=>x.classList.toggle('show',x.id==='p-'+p));
  $$('.bar button').forEach(b=>b.classList.toggle('on',b.dataset.go===p));
  window.scrollTo({top:0});
  if(p==='search')setTimeout(()=>$('#q').focus({preventScroll:true}),50);
  if(p==='fav')paintFav();
  if(p==='info')paintInfo();
+ if(p==='cart')paintCart();
+ refreshCart();
 }
 const thumb=(i,cls='thumb')=>`<div class="${cls}">${i.img?`<img class="ph" loading="lazy" src="${esc(i.img)}" alt="">`:esc(i.icon||'🍽️')}</div>`;
 function card(i,k=0){
  const f=fav.includes(i.id);
- return `<div class="item glass ${i.on?'':'out'}" data-id="${esc(i.id)}" style="animation-delay:${Math.min(k,10)*35}ms">${thumb(i)}<div class="body"><b>${esc(i.name)}</b><p>${esc(i.desc)}</p><div class="row"><span class="price">${fmt(i.price)}<small>د.ع</small></span>${i.on?(i.tag?`<span class="tag">${esc(i.tag)}</span>`:''):'<span class="tag">غير متوفر حالياً</span>'}</div></div><button class="fv ${f?'on':''}" data-fv="${esc(i.id)}" aria-label="مفضلة">${ic('heart',19)}</button></div>`;
+ return `<div class="item glass ${i.on?'':'out'}" data-id="${esc(i.id)}" style="animation-delay:${Math.min(k,10)*35}ms">${thumb(i)}<div class="body"><b>${esc(i.name)}</b><p>${esc(i.desc)}</p><div class="row"><span class="price">${fmt(i.price)}<small>د.ع</small></span><span data-slot="${esc(i.id)}">${slot(i)}</span></div></div><button class="fv ${f?'on':''}" data-fv="${esc(i.id)}" aria-label="مفضلة">${ic('heart',19)}</button></div>`;
 }
 function paint(){
  if(!D)return;
@@ -129,7 +204,7 @@ function paint(){
  $('#cover').innerHTML=s.cover?`<img src="${esc(s.cover)}" alt="">`:'';
  $('#logo').innerHTML=s.logo?`<img src="${esc(s.logo)}" alt="">`:esc(s.letter||(s.name||'م')[0]);
  $('#rname').textContent=s.name||'';$('#rtag').textContent=s.tag||'';
- $('#rinfo').innerHTML=[s.hours&&[ 'clock',s.hours],s.addr&&['pin',s.addr]].filter(Boolean).map(([i,t])=>`<span class="chip glass">${ic(i,15)}${esc(t)}</span>`).join('');
+ $('#rinfo').innerHTML=(TABLE?`<span class="chip glass tbl">${ic('qr',16)}طاولة ${TN}</span>`:'')+[s.hours&&[ 'clock',s.hours],s.addr&&['pin',s.addr]].filter(Boolean).map(([i,t])=>`<span class="chip glass">${ic(i,15)}${esc(t)}</span>`).join('');
  $('#cats').innerHTML=[{id:'all',name:'الكل'},...D.cats].map(c=>`<button class="${cur===c.id?'on':''}" data-cat="${esc(c.id)}">${esc(c.name)}</button>`).join('');
  let h='',n=0;
  for(const c of D.cats){
@@ -137,7 +212,9 @@ function paint(){
   const its=D.items.filter(i=>i.cat===c.id);if(!its.length)continue;
   h+=`<h2 class="cat">${esc(c.name)}</h2>`;its.forEach(i=>{h+=card(i,n++)});
  }
+ $('#list').className=(D.theme&&D.theme.layout==='grid')?'grid':'';
  $('#list').innerHTML=h||'<div class="empty">المنيو فارغ حالياً</div>';
+ refreshCart();
  $('#fcount').style.display=fav.length?'grid':'none';$('#fcount').textContent=fav.length;
  if($('#p-search').classList.contains('show'))paintSearch();
  if($('#p-fav').classList.contains('show'))paintFav();
@@ -162,10 +239,23 @@ function paintInfo(){
 }
 function openItem(id){
  const i=D.items.find(x=>x.id===id);if(!i)return;
- $('#sItem').innerHTML=`<div class="grab"></div>${thumb(i,'big')}<h3>${esc(i.name)}</h3><p class="sub" style="line-height:1.9;font-size:15px;margin:6px 0">${esc(i.desc)}</p><div class="row" style="margin:16px 0 8px"><span class="price" style="font-size:26px">${fmt(i.price)}<small>دينار</small></span>${i.on?(i.tag?`<span class="tag">${esc(i.tag)}</span>`:''):'<span class="tag">غير متوفر حالياً</span>'}</div><button class="btn" data-close>إغلاق</button>`;
+ $('#sItem').innerHTML=`<div class="grab"></div>${thumb(i,'big')}<h3>${esc(i.name)}</h3><p class="sub" style="line-height:1.9;font-size:15px;margin:6px 0">${esc(i.desc)}</p><div class="row" style="margin:16px 0 8px"><span class="price" style="font-size:26px">${fmt(i.price)}<small>دينار</small></span>${i.on?(i.tag?`<span class="tag">${esc(i.tag)}</span>`:''):'<span class="tag">غير متوفر حالياً</span>'}</div>${ordOn()&&i.on?`<div class="row" style="margin:14px 0 4px"><span class="stp"><button data-sq="1">${ic('plus',18)}</button><b id="sq">${SQ}</b><button class="m" data-sq="-1">${ic('minus',18)}</button></span><span class="sub">الكمية</span></div><input class="nt" id="snote" maxlength="120" placeholder="ملاحظة للمطبخ (مثال: بدون بصل)" value="${esc((CART.find(c=>c.id===id)||{}).note||'')}"><button class="send" style="margin-top:12px" data-sadd="${esc(id)}">${ic('cart',20)}<span id="sadd">${qtyOf(id)?'تحديث السلة':'أضف للسلة'}</span></button>`:''}<button class="btn" data-close>إغلاق</button>`;
+ SQ=Math.max(1,qtyOf(id));if($('#sq'))$('#sq').textContent=SQ;
  $('#mItem').classList.add('show');
 }
 document.addEventListener('click',e=>{
+ const qb=e.target.closest('[data-q]');
+ if(qb){e.stopPropagation();setQ(qb.dataset.q,qtyOf(qb.dataset.q)+ +qb.dataset.d);return}
+ const sq=e.target.closest('[data-sq]');
+ if(sq){SQ=Math.max(1,Math.min(20,SQ+ +sq.dataset.sq));$('#sq').textContent=SQ;return}
+ const sa=e.target.closest('[data-sadd]');
+ if(sa){const id=sa.dataset.sadd;setQ(id,SQ);const c=CART.find(x=>x.id===id);if(c)c.note=($('#snote').value||'').trim().slice(0,120);saveCart();$('#mItem').classList.remove('show');toast('أضفنا للسلة ✓');return}
+ const cq=e.target.closest('[data-cq]');
+ if(cq){setQ(cq.dataset.cq,qtyOf(cq.dataset.cq)+ +cq.dataset.d);return}
+ if(e.target.closest('#pill'))return go('cart');
+ if(e.target.closest('#sendOrder'))return sendOrder();
+ if(e.target.closest('#newOrd')){ORD=null;saveOrd();paintCart();return}
+ if(e.target.closest('[data-tomenu]'))return go('menu');
  const fv=e.target.closest('[data-fv]');
  if(fv){e.stopPropagation();const id=fv.dataset.fv;fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];if(!PREVIEW)localStorage.setItem('fav:'+SLUG,JSON.stringify(fav));paint();return}
  const t=e.target.closest('button,.item,.modal');if(!t)return;
@@ -176,6 +266,49 @@ document.addEventListener('click',e=>{
  if(t.classList.contains('item'))openItem(t.dataset.id);
 });
 $('#q').oninput=paintSearch;
+document.addEventListener('input',e=>{
+ if(e.target.dataset.cn){const c=CART.find(x=>x.id===e.target.dataset.cn);if(c){c.note=e.target.value.slice(0,120);saveCart()}}
+ if(e.target.id==='onote')ONOTE=e.target.value.slice(0,200);
+});
+const STL={new:['تم استلام طلبك','نرسله للمطبخ الآن'],prep:['قيد التحضير','المطبخ يجهز طلبك'],ready:['طلبك جاهز','بالهناء والعافية'],done:['تم تقديم الطلب','نتمنى لك وقتاً طيباً'],cancel:['تم إلغاء الطلب','تواصل مع الموظف إذا لزم']};
+function paintCart(){
+ let h='';
+ if(ORD){
+  const st=ORD.st||'new',idx={new:0,prep:1,ready:2,done:2}[st],fin=st==='done'||st==='cancel',L=STL[st]||STL.new;
+  const stp=[['استلمنا','receipt'],['نحضّر','clock'],['جاهز','check']];
+  h+=`<div class="glass stat"><div class="sub">طلبك رقم</div><div class="no">${ORD.n}</div><h3 style="margin:6px 0 0;font-family:var(--hfont);font-size:22px">${L[0]}</h3><div class="sub">${L[1]}</div>${st==='cancel'?'':`<div class="steps">${stp.map((x,k)=>`${k?`<div class="l ${k<=idx?'on':''}"></div>`:''}<div class="s ${k<=idx?'on':''}"><i>${ic(x[1],17)}</i>${x[0]}</div>`).join('')}</div>`}<div class="sub">${fmt(ORD.total)} د.ع · طاولة ${TN}</div>${fin?'<button class="send" id="newOrd" style="margin-top:16px">طلب جديد</button>':''}</div>`;
+ }
+ const lines=CART.map(c=>({c,i:itemOf(c.id)})).filter(x=>x.i);
+ if(lines.length){
+  h+=lines.map(({c,i})=>`<div class="glass ci"><div class="r1">${thumb(i,'thumb').replace('class="thumb"','class="thumb" style="width:58px;height:58px;border-radius:14px;font-size:28px"')}<div class="nm"><b>${esc(i.name)}</b><span>${fmt(i.price*c.q)} د.ع</span></div><span class="stp"><button data-cq="${esc(c.id)}" data-d="1">${ic('plus',16)}</button><b>${c.q}</b><button class="m" data-cq="${esc(c.id)}" data-d="-1">${ic('minus',16)}</button></span></div><input class="nt" data-cn="${esc(c.id)}" maxlength="120" placeholder="ملاحظة على هذا الصنف" value="${esc(c.note||'')}"></div>`).join('');
+  h+=`<textarea class="nt" id="onote" rows="2" maxlength="200" placeholder="ملاحظة على الطلب كله (اختياري)">${esc(ONOTE)}</textarea><div class="glass tot"><span>المجموع</span><b>${fmt(cartTotals().t)} د.ع</b></div><button class="send" id="sendOrder">${ic('check',22)}إرسال الطلب للمطبخ</button><div class="nmsg">الدفع عند الاستلام على الطاولة. السعر النهائي حسب القائمة.</div>`;
+ }else if(!ORD||['done','cancel'].includes(ORD.st)){
+  if(!ORD)h+=`<div class="empty">${ic('cart',36)}<br>السلة فارغة<br>اضغط + على أي أكلة حتى تضيفها</div><button class="btn" data-tomenu>تصفح المنيو</button>`;
+ }
+ $('#cres').innerHTML=h;T($('#cres'));
+}
+async function sendOrder(){
+ if(PREVIEW){toast('هذه معاينة فقط، الإرسال معطل');return}
+ const b=$('#sendOrder');b.disabled=true;
+ const ERRS={slow_down:'انتظر لحظات ثم أعد المحاولة',too_many_open:'عندك عدة طلبات قيد الانتظار، انتظر استلامها',bad_table:'رمز الطاولة غير صالح، امسح الـ QR مرة ثانية',ordering_off:'الطلب من الطاولة متوقف حالياً',unavailable:'أحد الأصناف غير متوفر حالياً، حدّث السلة',bad_items:'الطلب غير صالح'};
+ try{
+  const r=await fetch(API+'/order/'+SLUG,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({t:TN,k:TK,items:CART.map(c=>({id:c.id,q:c.q,note:c.note||''})),note:ONOTE})});
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok){toast(j.error==='unavailable'&&j.name?'«'+j.name+'» غير متوفر حالياً':(ERRS[j.error]||'تعذر الإرسال، حاول مرة ثانية'));b.disabled=false;return}
+  ORD={id:j.id,n:j.n,total:j.total,st:'new',t:Date.now()};CART=[];ONOTE='';saveCart();saveOrd();refreshCart();paintCart();poll();
+  if(navigator.vibrate)navigator.vibrate(80);
+ }catch(e){toast('لا يوجد اتصال، حاول مرة ثانية');b.disabled=false}
+}
+function poll(){
+ clearTimeout(pollT);
+ if(!ORD||['done','cancel'].includes(ORD.st)||PREVIEW)return;
+ pollT=setTimeout(async()=>{
+  try{const r=await fetch(API+'/order/'+SLUG+'/'+ORD.id,{cache:'no-store'});
+   if(r.ok){const j=await r.json();if(j.st&&j.st!==ORD.st){ORD.st=j.st;saveOrd();if(STL[j.st])toast(STL[j.st][0]);if(navigator.vibrate)navigator.vibrate([60,40,60]);if(curPage==='cart')paintCart()}}
+   else if(r.status===404){ORD=null;saveOrd();paintCart()}}catch(e){}
+  poll();
+ },5000);
+}
 async function boot(){
  applyTheme();
  if(PREVIEW){
@@ -196,6 +329,6 @@ async function boot(){
   if(!D)$('#list').innerHTML='<div class="empty">تعذر تحميل المنيو، تأكد من الإنترنت</div>';
  }
 }
-watchEmoji();boot();
+watchEmoji();boot();poll();
 </script>
 </body></html>
