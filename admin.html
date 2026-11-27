@@ -412,7 +412,7 @@ async function pollOrders(full){
 }
 function startOrders(){
  if(started)return;started=true;
- const loop=async()=>{pollN++;await pollOrders(pollN%15===0);setTimeout(loop,4000)};loop();
+ const loop=async()=>{pollN++;await pollOrders(pollN%15===0);setTimeout(loop,6000)};loop();
  setInterval(()=>{
   const n=ORD.filter(o=>o.st==='new').length;
   if(n&&SND)beep();
