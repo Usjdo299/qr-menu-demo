@@ -1,4 +1,4 @@
-const API='https://menu-api.bof1851.workers.dev';
+const API=/vercel\.app$/.test(location.hostname)?'/api':'https://menu-api.bof1851.workers.dev';
 const PRESETS={
  emerald:{n:'زمرد',bg:'#0f1a16',bg2:'#17251f',ink:'#f3efe6',mut:'#a9b5ae',acc:'#c9a45c',ai:'#1a1408',dark:1},
  navy:{n:'ملكي',bg:'#0c1424',bg2:'#142036',ink:'#eef2f8',mut:'#9fb0c8',acc:'#d4b070',ai:'#1a1408',dark:1},
