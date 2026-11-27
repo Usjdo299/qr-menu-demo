@@ -4,8 +4,13 @@ const PRESETS={
  navy:{n:'ملكي',bg:'#0c1424',bg2:'#142036',ink:'#eef2f8',mut:'#9fb0c8',acc:'#d4b070',ai:'#1a1408',dark:1},
  burgundy:{n:'عنابي',bg:'#1a0f12',bg2:'#2a161b',ink:'#f6ece6',mut:'#c1a8a2',acc:'#d99a6c',ai:'#1d1008',dark:1},
  graphite:{n:'فحمي',bg:'#0f0f10',bg2:'#1a1a1c',ink:'#f1f1f1',mut:'#a0a0a6',acc:'#7dd3b0',ai:'#08170f',dark:1},
+ rose:{n:'وردي',bg:'#1c1015',bg2:'#2b1820',ink:'#f8ecee',mut:'#c7a9b0',acc:'#e0a3b0',ai:'#2a0e16',dark:1},
+ ocean:{n:'محيطي',bg:'#0a1a1f',bg2:'#10282f',ink:'#eaf4f4',mut:'#9bb8bc',acc:'#5fd0c4',ai:'#052420',dark:1},
+ noir:{n:'أسود ذهبي',bg:'#080808',bg2:'#141414',ink:'#f6f1e4',mut:'#a8a396',acc:'#e3b94f',ai:'#1a1400',dark:1},
  cream:{n:'عاجي',bg:'#f5efe3',bg2:'#ebe3d2',ink:'#1e2723',mut:'#6b6a60',acc:'#8c5f26',ai:'#ffffff',dark:0}
 };
+const HFONTS={reem:'Reem Kufi',cairo:'Cairo',tajawal:'Tajawal',kufi:'Noto Kufi Arabic'};
+const SHAPES={squircle:['30px','36px'],round:['50%','50%'],square:['14px','20px']};
 const FONTS={tajawal:'Tajawal',cairo:'Cairo',almarai:'Almarai',plex:'IBM Plex Sans Arabic',kufi:'Noto Kufi Arabic'};
 function applyTheme(t){
  t=t||{};const p=PRESETS[t.preset]||PRESETS.emerald,r=document.documentElement.style;
@@ -17,6 +22,8 @@ function applyTheme(t){
  r.setProperty('--glass2',p.dark?'rgba(20,28,25,.62)':'rgba(255,252,246,.74)');
  r.setProperty('--shadow',p.dark?'0 10px 40px rgba(0,0,0,.35)':'0 10px 30px rgba(80,60,20,.13)');
  const f=FONTS[t.font]||'Tajawal';r.setProperty('--font',`'${f}',Tajawal,system-ui,sans-serif`);
+ const hf=HFONTS[t.hfont]||'Reem Kufi';r.setProperty('--hfont',`'${hf}','Reem Kufi',var(--font)`);
+ const sh=SHAPES[t.shape]||SHAPES.squircle;r.setProperty('--lr',sh[0]);r.setProperty('--lrr',sh[1]);
  document.querySelector('meta[name=theme-color]')?.setAttribute('content',p.bg);
 }
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -64,11 +71,13 @@ const ICON={
  list:'<path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/>',
  grid:'<rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>',
  gear:'<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/>',
+ cart:'<circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>',
+ minus:'<path d="M5 12h14"/>',check:'<path d="M20 6 9 17l-5-5"/>',bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',printer:'<path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V2h12v7"/><rect width="12" height="8" x="6" y="14"/>',camera:'<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',receipt:'<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/>',
  out:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/>'
 };
 const ic=(n,s=22)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[n]||''}</svg>`;
 const BASE_CSS=`
-:root{--bg:#0f1a16;--bg2:#17251f;--ink:#f3efe6;--mut:#a9b5ae;--acc:#c9a45c;--ai:#1a1408;--line:rgba(255,255,255,.1);--glass:rgba(255,255,255,.07);--glass2:rgba(20,28,25,.62);--shadow:0 10px 40px rgba(0,0,0,.35);--font:'Tajawal',system-ui,sans-serif}
+:root{--bg:#0f1a16;--bg2:#17251f;--ink:#f3efe6;--mut:#a9b5ae;--acc:#c9a45c;--ai:#1a1408;--line:rgba(255,255,255,.1);--glass:rgba(255,255,255,.07);--glass2:rgba(20,28,25,.62);--shadow:0 10px 40px rgba(0,0,0,.35);--font:'Tajawal',system-ui,sans-serif;--hfont:'Reem Kufi',var(--font);--lr:30px;--lrr:36px}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);min-height:100vh}
