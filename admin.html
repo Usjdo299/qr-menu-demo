@@ -162,7 +162,7 @@ async function start(slug,pw){
  $('#tView').innerHTML=ic('eye',18)+'<span>عرض المنيو</span>';$('#tView').href=custUrl();
  $('#tOut').innerHTML=ic('out',18);$('#tPub').innerHTML=ic('up',18)+'<span>نشر التعديلات</span>';
  $('#mEd').innerHTML=ic('edit',18)+'تعديل';$('#mPv').innerHTML=ic('eye',18)+'معاينة';
- $('#frame').src='index.html?r='+slug+'&preview=1';
+ $('#frame').src='index.html?r='+slug+'&preview=1&v='+Date.now();
  buildSide();render();paintPv();stat();
  T(document.body);
 }
