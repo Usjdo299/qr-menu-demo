@@ -307,7 +307,7 @@ function poll(){
    if(r.ok){const j=await r.json();if(j.st&&j.st!==ORD.st){ORD.st=j.st;saveOrd();if(STL[j.st])toast(STL[j.st][0]);if(navigator.vibrate)navigator.vibrate([60,40,60]);if(curPage==='cart')paintCart()}}
    else if(r.status===404){ORD=null;saveOrd();paintCart()}}catch(e){}
   poll();
- },5000);
+ },8000);
 }
 async function boot(){
  applyTheme();
